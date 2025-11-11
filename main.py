@@ -512,11 +512,12 @@ st.markdown("""
     <div style='padding: 30px 20px;'>
         <div class="footer-tech">
             <span class="tech-badge">🤖 GPT-4</span>
-            <span class="tech-badge">🎯 SigLIP</span>
+            <span class="tech-badge">🎯 CLIP</span>
             <span class="tech-badge">🎨 GIT-Base</span>
         </div>
         <div class="footer-creator">
             Crafted with 💜 for Content Creators Worldwide 🌍
         </div>
     </div>
+
 """, unsafe_allow_html=True)
