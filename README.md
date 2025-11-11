@@ -100,18 +100,6 @@ A full **FastAPI backend** is already implemented, so this project can be deploy
 
 ---
 
-## 📁 Folder Structure
-
-```
-insta-caption-tags-generator/
-│── app.py                 # Streamlit UI
-│── tag_utils.py           # Hashtag model + scoring
-│── caption_utils.py       # Caption model logic
-│── llm_utils.py           # GPT-based caption polishing
-│── instagram_hashtags_210.txt
-│── requirements.txt
-```
-
 ---
 
 ## ✅ Future Enhancements
@@ -122,14 +110,6 @@ insta-caption-tags-generator/
 ✅ Add downloading: caption + tags in one click  
 ✅ Save image history for logged-in users
 
----
-
-## 📸 Screenshots
-(Add screenshots here once available)
-- Upload Page
-- Generated Output (Mood, Caption, Tags)
-
----
 
 ### 💡 About the Project
 Built by **Junaid**, focusing on practical AI/ML applications using vision models, LLMs, and real deployment. This app demonstrates:
