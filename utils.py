@@ -23,7 +23,7 @@ def load_tagger_model():
     try:
         tagger = pipeline(
         "zero-shot-image-classification",
-        model="google/siglip-base-patch16-224",
+        model="openai/clip-vit-base-patch32",
         token=hf_token)
         return tagger
     except Exception as e:
@@ -139,6 +139,7 @@ def Generate_post_caption(top_k_tags, predicted_caption, llm_model):
         print("Error while generating Caption for Image : ", e)
 
         return None
+
 
 
 
