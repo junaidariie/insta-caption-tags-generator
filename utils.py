@@ -23,7 +23,7 @@ def load_tagger_model():
     try:
         tagger = pipeline(
         "zero-shot-image-classification",
-        model="openai/clip-vit-base-patch32",
+        model="google/siglip-base-patch16-224",
         token=hf_token)
         return tagger
     except Exception as e:
@@ -52,18 +52,18 @@ def load_hashtags():
     try:
         with open("instagram_hashtags_210.txt", "r", encoding="utf-8") as f:
             hashtags = f.read().splitlines()
-        st.write(f"Loaded {len(hashtags)} hashtags")  # Debug line
+        st.write(f"Loaded {len(hashtags)} hashtags") 
         return hashtags
     except Exception as e:
         st.error(f"Error while loading hashtags: {e}")
         return None
     
-def find_hashtags(tagger, image, hashtags): #later add option ofr top k
+def find_hashtags(tagger, image, hashtags): 
     try:
         top_k_tags = []
         results = tagger(image, hashtags)
         sorted_tags = sorted(results, key=lambda x:x["score"], reverse=True)
-        for tags in sorted_tags[:5]: #instead of 5 will have k here
+        for tags in sorted_tags[:5]:
             top_k_tags.append(tags["label"])
         return top_k_tags
     except Exception as e:
@@ -139,5 +139,6 @@ def Generate_post_caption(top_k_tags, predicted_caption, llm_model):
         print("Error while generating Caption for Image : ", e)
 
         return None
+
 
 
