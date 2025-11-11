@@ -5,7 +5,7 @@ from PIL import Image
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
-from langchain.output_parsers import PydanticOutputParser
+from langchain_core.output_parsers import PydanticOutputParser
 from dotenv import load_dotenv
 import io
 import streamlit as st
@@ -135,4 +135,5 @@ def Generate_post_caption(top_k_tags, predicted_caption, llm_model):
         }
     except Exception as e:
         print("Error while generating Caption for Image : ", e)
+
         return None
