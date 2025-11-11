@@ -9,6 +9,7 @@ uvicorn[standard]
 python-multipart
 Pillow
 requests
+langchain-core
 python-dotenv
 pydantic
 openai
@@ -17,4 +18,5 @@ safetensors
 tokenizers
 numpy
 tqdm
+
 streamlit
