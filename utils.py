@@ -49,11 +49,12 @@ def load_image(image_path) -> Image.Image:
 #-------------------loading hastags---------------------------
 def load_hashtags():
     try:
-        with open("instagram_hashtags_210.txt", "rb") as f:
-            hashtags = f.read().decode("utf-8").splitlines()
+        with open("instagram_hashtags_210.txt", "r", encoding="utf-8") as f:
+            hashtags = f.read().splitlines()
+        st.write(f"Loaded {len(hashtags)} hashtags")  # Debug line
         return hashtags
     except Exception as e:
-        print("Got an error while loading the hashtags : ",e)
+        st.error(f"Error while loading hashtags: {e}")
         return None
     
 def find_hashtags(tagger, image, hashtags): #later add option ofr top k
@@ -137,3 +138,4 @@ def Generate_post_caption(top_k_tags, predicted_caption, llm_model):
         print("Error while generating Caption for Image : ", e)
 
         return None
+
